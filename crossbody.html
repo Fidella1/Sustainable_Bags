@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossbody - Sustainable Bags Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">
+        <span class="logo-initials">SB</span><span class="logo-icon">👜</span> <!-- Logo with initials and bag icon -->
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="totes.html">Totes</a></li>
+            <li><a href="backpacks.html">Backpacks</a></li>
+            <li><a href="crossbody.html">Crossbody</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li id="cart-container">
+                <a href="cart.html">
+                    <span id="cart-icon">
+                        🛒
+                    </span>
+                    <span id="cart-count">0</span>
+        </ul>
+    </nav>
+</header>
+
+<!-- Crossbody Category Page Content -->
+<div class="category-banner">
+    <h1>Eco-Friendly Crossbody Bags</h1>
+    <p>Stylish, sustainable, and perfect for hands-free carrying, discover our eco-friendly crossbody bags.</p>
+</div>
+
+<!-- Products Grid -->
+<div id="products-container">
+    <!-- Static Crossbody products for now -->
+    <div class="product">
+        <img src="images/crossbody1.jpg" alt="Classic Crossbody Bag">
+        <h3>Classic Crossbody Bag</h3>
+        <p>A sleek and stylish crossbody bag made from sustainable materials, ideal for everyday use.</p>
+        <span class="price">$35.00</span>
+        <button class="add-to-cart" onclick="addToCart('crossbody1', '$35.00', 'images/crossbody1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/crossbody2.jpg" alt="Eco-Friendly Crossbody">
+        <h3>Eco-Friendly Crossbody</h3>
+        <p>Durable and stylish, perfect for carrying your essentials while being kind to the planet.</p>
+        <span class="price">$40.00</span>
+        <button class="add-to-cart" onclick="addToCart('crossbody2', '$40.00', 'images/crossbody2jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/crossbody3.jpg" alt="Vintage Crossbody Bag">
+        <h3>Vintage Crossbody Bag</h3>
+        <p>A timeless design, made from recycled materials to ensure both style and sustainability.</p>
+        <span class="price">$38.00</span>
+        <button class="add-to-cart" onclick="addToCart('crossbody3', '$38.00', 'images/crossbody3.jpg')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Sustainable Bags Shop. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Function to add product to the cart
+    function addToCart(name, price, image) {
+        // Create a product object
+        const product = {
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1 // Default quantity for the first time
+        };
+
+        // Get current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the product is already in the cart
+        const productIndex = cart.findIndex(item => item.name === name);
+        if (productIndex > -1) {
+            // If the product already exists, increase quantity
+            cart[productIndex].quantity++;
+        } else {
+            // If product doesn't exist, add to cart
+            cart.push(product);
+        }
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart count in the navigation bar (if needed)
+        updateCartCount();
+    }
+
+    // Function to update cart count (for the navbar)
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+
+    // Initialize the cart count on page load
+    window.onload = updateCartCount;
+</script>
+
+<script src="scripts/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totes - Sustainable Bags Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">
+        <span class="logo-initials">SB</span><span class="logo-icon">👜</span> <!-- Logo with initials and bag icon -->
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="totes.html">Totes</a></li>
+            <li><a href="backpacks.html">Backpacks</a></li>
+            <li><a href="crossbody.html">Crossbody</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li id="cart-container">
+                <a href="cart.html">
+                    <span id="cart-icon">
+                        🛒
+                    </span>
+                    <span id="cart-count">0</span>
+        </ul>
+    </nav>
+</header>
+
+<!-- Totes Category Page Content -->
+<div class="category-banner">
+    <h1>Eco-Friendly Totes</h1>
+    <p>Discover a range of sustainable tote bags designed to carry your essentials in style.</p>
+</div>
+
+<!-- Products Grid -->
+<div id="products-container">
+    <!-- Static Totes products for now -->
+    <div class="product">
+        <img src="images/tote1.jpg" alt="Eco Tote Bag">
+        <h3>Eco Tote Bag</h3>
+        <p>A stylish and eco-friendly tote bag made from sustainable materials.</p>
+        <span class="price">$25.00</span>
+        <button class="add-to-cart" onclick="addToCart('Eco Tote Bag', '$25.00', 'images/tote1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/tote2.jpg" alt="Canvas Tote Bag">
+        <h3>Canvas Tote Bag</h3>
+        <p>Durable and spacious, perfect for your daily essentials.</p>
+        <span class="price">$30.00</span>
+        <button class="add-to-cart" onclick="addToCart('Eco Tote Bag', '$30.00', 'images/tote2.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/tote3.jpg" alt="Recycled Tote">
+        <h3>Recycled Tote</h3>
+        <p>A chic tote bag made from recycled materials, combining style and sustainability.</p>
+        <span class="price">$20.00</span>
+        <button class="add-to-cart" onclick="addToCart('Eco Tote Bag', '$20.00', 'images/tote3.jpg')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Sustainable Bags Shop. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Function to add product to the cart
+    function addToCart(name, price, image) {
+        // Create a product object
+        const product = {
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1 // Default quantity for the first time
+        };
+
+        // Get current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the product is already in the cart
+        const productIndex = cart.findIndex(item => item.name === name);
+        if (productIndex > -1) {
+            // If the product already exists, increase quantity
+            cart[productIndex].quantity++;
+        } else {
+            // If product doesn't exist, add to cart
+            cart.push(product);
+        }
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart count in the navigation bar (if needed)
+        updateCartCount();
+    }
+
+    // Function to update cart count (for the navbar)
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+
+    // Initialize the cart count on page load
+    window.onload = updateCartCount;
+</script>
+
+<script src="scripts/shop.js"></script>
+</body>
+</html>

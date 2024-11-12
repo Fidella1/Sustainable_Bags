@@ -1,0 +1,380 @@
+/* Home Page Background */
+.home-background {
+    background-image: url('images/sustainable-bags-background.jpg'); /* A beautiful background image */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #2c3e50; /* Dark Olive */
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #8e9e8e; /* Light Beige */
+}
+
+.shop-now-btn {
+    background-color: #6b8e23; /* Olive Green */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #556b2f; /* Dark Olive */
+}
+
+/* Navigation Bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6b8e23; /* Olive Green */
+}
+
+.logo-initials {
+    color: #2c3e50; /* Dark Olive */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #6b8e23; /* Olive Green */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2c3e50; /* Dark Olive */
+}
+
+/* Filters Section */
+#filters {
+    margin: 50px 0 30px 0;
+    text-align: center;
+}
+
+#filters label {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: #6b8e23; /* Olive Green */
+}
+
+#filters select {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #f1f1f1; /* Beige */
+    border: 1px solid #6b8e23; /* Olive Green */
+}
+
+/* Products Grid */
+#products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Cards */
+.product {
+    background-color: #fff; /* White background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+}
+
+.product h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50; /* Dark Olive */
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #8e9e8e; /* Light Beige */
+    margin-bottom: 10px;
+}
+
+.product .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6b8e23; /* Olive Green */
+    margin-bottom: 15px;
+}
+
+.product .add-to-cart {
+    background-color: #6b8e23; /* Olive Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product .add-to-cart:hover {
+    background-color: #556b2f; /* Dark Olive */
+}
+
+/* Cart Page Styling */
+.cart-container {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light Beige */
+}
+
+#cart-items {
+    margin-bottom: 30px;
+}
+
+#cart-total {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#checkout-btn {
+    background-color: #6b8e23; /* Olive Green */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #556b2f; /* Dark Olive */
+}
+
+
+
+
+/* Category Banner */
+.category-banner {
+    background-color: #f1f1f1; /* Light Beige */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px; /* To offset the fixed navigation */
+}
+
+.category-banner h1 {
+    font-size: 2.5rem;
+    color: #6b8e23; /* Olive Green */
+    font-family: 'Arial', sans-serif;
+}
+
+.category-banner p {
+    font-size: 1.2rem;
+    color: #8e9e8e; /* Light Beige */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Product Cards */
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+}
+
+.product h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50; /* Dark Olive */
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #8e9e8e; /* Light Beige */
+    margin-bottom: 10px;
+}
+
+.product .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6b8e23; /* Olive Green */
+    margin-bottom: 15px;
+}
+
+.product .add-to-cart {
+    background-color: #6b8e23; /* Olive Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product .add-to-cart:hover {
+    background-color: #556b2f; /* Dark Olive */
+}
+
+
+/* General cart container */
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top:100px;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cart-item h3 {
+    flex-grow: 1;
+}
+
+.cart-item button {
+    background-color: #ff4040;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-item button:hover {
+    background-color: #d63333;
+}
+
+/* Cart Total Section */
+#cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#checkout-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+#checkout-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #F5F5DC; /* Beige color */
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}

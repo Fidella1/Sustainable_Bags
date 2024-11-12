@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallets - Sustainable Bags Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">
+        <span class="logo-initials">SB</span><span class="logo-icon">👜</span> <!-- Logo with initials and bag icon -->
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="totes.html">Totes</a></li>
+            <li><a href="backpacks.html">Backpacks</a></li>
+            <li><a href="crossbody.html">Crossbody</a></li>
+            <li><a href="wallets.html">Wallets</a></li>
+            <li id="cart-container">
+                <a href="cart.html">
+                    <span id="cart-icon">
+                        🛒
+                    </span>
+                    <span id="cart-count">0</span>
+        </ul>
+    </nav>
+</header>
+
+<!-- Wallets Category Page Content -->
+<div class="category-banner">
+    <h1>Eco-Friendly Wallets</h1>
+    <p>Browse our collection of sustainable wallets, perfect for carrying your essentials with style and sustainability.</p>
+</div>
+
+<!-- Products Grid -->
+<div id="products-container">
+    <!-- Static Wallets products for now -->
+    <div class="product">
+        <img src="images/wallet1.jpg" alt="Minimalist Wallet">
+        <h3>Minimalist Wallet</h3>
+        <p>A sleek and compact wallet designed to carry only the essentials, made from eco-friendly materials.</p>
+        <span class="price">$20.00</span>
+        <button class="add-to-cart" onclick="addToCart('wallet1', '$20.00', 'images/wallet1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/wallet2.jpg" alt="Leather Wallet">
+        <h3>Leather Wallet</h3>
+        <p>A durable, high-quality wallet crafted from sustainable leather, combining style and functionality.</p>
+        <span class="price">$45.00</span>
+        <button class="add-to-cart" onclick="addToCart('wallet2', '$45.00', 'images/wallet2.jpg')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="images/wallet3.jpg" alt="Cardholder Wallet">
+        <h3>Cardholder Wallet</h3>
+        <p>Perfect for those who need a compact option to hold cards and cash, made from eco-conscious materials.</p>
+        <span class="price">$15.00</span>
+        <button class="add-to-cart" onclick="addToCart('wallet3', '$15.00', 'images/wallet3.jpg')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Sustainable Bags Shop. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Function to add product to the cart
+    function addToCart(name, price, image) {
+        // Create a product object
+        const product = {
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1 // Default quantity for the first time
+        };
+
+        // Get current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the product is already in the cart
+        const productIndex = cart.findIndex(item => item.name === name);
+        if (productIndex > -1) {
+            // If the product already exists, increase quantity
+            cart[productIndex].quantity++;
+        } else {
+            // If product doesn't exist, add to cart
+            cart.push(product);
+        }
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart count in the navigation bar (if needed)
+        updateCartCount();
+    }
+
+    // Function to update cart count (for the navbar)
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+
+    // Initialize the cart count on page load
+    window.onload = updateCartCount;
+</script>
+
+<script src="scripts/shop.js"></script>
+</body>
+</html>

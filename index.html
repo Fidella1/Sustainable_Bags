@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Bags Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Home Page Background -->
+<div class="home-background">
+    <header>
+        <div class="logo">
+            <span class="logo-initials">SB</span><span class="logo-icon">👜</span> <!-- Logo with initials and bag icon -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="totes.html">Totes</a></li>
+                <li><a href="backpacks.html">Backpacks</a></li>
+                <li><a href="crossbody.html">Crossbody</a></li>
+                <li><a href="wallets.html">Wallets</a></li>
+                <li id="cart-container">
+                    <a href="cart.html">
+                        <span id="cart-icon">
+                            🛒
+                        </span>
+                        <span id="cart-count">0</span>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcoming Section -->
+    <div class="welcome-section">
+        <h1>Welcome to Sustainable Bags Shop</h1>
+        <p>Your one-stop shop for eco-friendly bags crafted with love and care. Explore our collection and make a sustainable choice today!</p>
+        <a href="shop.html?category=totes" class="shop-now-btn">Shop Now</a>
+    </div>
+</div>
+
+<!-- Optional Filters Section -->
+<div id="filters">
+    <label for="category-select">Filter by category: </label>
+    <select id="category-select">
+        <option value="totes">Totes</option>
+        <option value="backpacks">Backpacks</option>
+        <option value="crossbody">Crossbody</option>
+        <option value="wallets">Wallets</option>
+    </select>
+</div>
+
+<!-- Products Grid -->
+<div id="products-container">
+    <!-- Products will be dynamically injected here -->
+</div>
+
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Sustainable Bags Shop. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="scripts/shop.js"></script>
+
+</body>
+</html>
